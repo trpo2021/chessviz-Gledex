@@ -1,32 +1,46 @@
 #include <stdio.h>
 #include <string.h>
 
-void start_cell(char* cell[8])
+void start_cell(char cell[][9])
 {
-    *(cell) = "rnbqkbnr";
-    *(cell + 1) = "pppppppp";
-    *(cell + 6) = "PPPPPPPP";
-    *(cell + 7) = "RNBQKBNR";
+    char first_row[9] = {"rnbqkbnr\0"};
+    char sec_row[9] = {"pppppppp\0"};
+    char sev_row[9] = {"PPPPPPPP\0"};
+    char ei_row[9] = {"RNBQKBNR\0"};
+    for (int i = 0; i < 9; i++) {
+        cell[0][i] = first_row[i];
+    }
+    for (int i = 0; i < 9; i++) {
+        cell[1][i] = sec_row[i];
+    }
+    for (int i = 0; i < 9; i++) {
+        cell[6][i] = sev_row[i];
+    }
+    for (int i = 0; i < 9; i++) {
+        cell[7][i] = ei_row[i];
+    }
 }
 
-void display_cell(char* cell[])
+void display_cell(char cell[8][9])
 {
-    for (int i = 0; i < 8; ++i) {
-        printf("\t\t %s\n", *(cell + i));
+    printf("\n");
+    for (int i = 0; i < 8; i++) {
+        printf("\t\t%s\n", cell[i]);
     }
 }
 
 int main()
 {
-    char* cell[8]
-            = {"        ",
-               "        ",
-               "        ",
-               "        ",
-               "        ",
-               "        ",
-               "        ",
-               "        "};
+    char cell[8][9]
+            = {"        \0",
+               "        \0",
+               "        \0",
+               "        \0",
+               "        \0",
+               "        \0",
+               "        \0",
+               "        \0"};
+    char* sym = cell[0];
     start_cell(cell);
     display_cell(cell);
 }
