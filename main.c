@@ -40,7 +40,6 @@ int main()
                "        \0",
                "        \0",
                "        \0"};
-    char* sym = cell[0];
     start_cell(cell);
     display_cell(cell);
 }
