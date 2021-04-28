@@ -9,7 +9,7 @@ bin/main: obj/chess.o obj/$(SRC)/libmove.a
 	$(CC) $(CFLAGS) -o $@  $^
 
 obj/chess.o: $(CHESS)/main.c
-	$(CC) $(CFLAGS)  -o $@  -c $^ -Isrc/libchess
+	$(CC) $(CFLAGS)  -o $@  -c $^ -I$(SRC)
 
 obj/$(SRC)/libmove.a: obj/$(CHESS)/move.o
 	ar rcs $@ $<

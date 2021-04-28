@@ -1,4 +1,4 @@
-#include "/home/pavel/Документы/TRPO/chessviz-Gledex/src/libchess/move.h"
+#include "move.h"
 
 #include <stdio.h>
 
