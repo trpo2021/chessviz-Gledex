@@ -1,4 +1,4 @@
-name: Build
+name: Build_without_format
 
 on: push
 
