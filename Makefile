@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 CPPFLAGS = -MMD
 SRC = src/libchess
 CHESS = src/chess
@@ -20,4 +20,8 @@ obj/$(CHESS)/move.o: $(SRC)/move.c
 .PHONY: clean
 
 clean:
-	rm -rf $$($(EXCEPT)) 
+	rm -rf $$($(EXCEPT));
+	rm bin/*
+	rm obj/*.o
+	rm obj/src/chess/*
+	rm obj/src/libchess/*
