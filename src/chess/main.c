@@ -45,7 +45,6 @@ int main()
     display_cell(cell);
     char turn[8];
     int game_state = 1;
-
     while (game_state != 0) {
         scanf("%s", turn);
         if (turn[0] == '-') {
